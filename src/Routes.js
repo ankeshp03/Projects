@@ -9,6 +9,7 @@ const Routes = () => {
         <Suspense fallback={<span>Loading...</span>}>
             <Switch>
                 <Route exact path="/" component={Home} />
+                <Route exact path="/projects" component={Home} />
                 <Route path="/d3charts" render={(props) => <D3Charts {...props} />} />
             </Switch>
         </Suspense>
