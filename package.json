@@ -1,7 +1,7 @@
 {
   "name": "projects",
   "version": "0.1.0",
-  "homepage": "https://5f5e768bc3e9a617b8667b64--hardcore-tesla-58ae82.netlify.app/projects/",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
