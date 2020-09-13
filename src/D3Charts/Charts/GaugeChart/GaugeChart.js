@@ -1,6 +1,6 @@
 import React from "react";
 import * as d3 from "d3";
-import { interpolatePath } from 'd3-interpolate-path';
+// import { interpolatePath } from 'd3-interpolate-path';
 import Tooltip from './../../ChartAssets/Tooltip';
 import Data from "./data.json";
 
@@ -360,18 +360,6 @@ class GaugeChart extends React.Component {
                     //     onMouseMove(event, `${d.data.displayKey}: ${d.data.displayValue}`);
                     // })
                     .on("mouseout", Tooltip.hide);
-            }
-
-            function onMouseMove(event, text) {
-                tooltip
-                    .style("left", event.pageX + 20 + "px")
-                    .style("top", event.pageY - 10 + "px")
-                    .style("display", "block")
-                    .html(text);
-            }
-
-            function onMouseOut() {
-                tooltip.style("display", "none");
             }
         }
 
