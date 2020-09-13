@@ -1,0 +1,9 @@
+[
+    {
+        "show": false,
+        "key": "d3Charts",
+        "title": "D3 Charts",
+        "description": "Charts and graphs visualization using D3js.",
+        "path": "/d3charts"
+    }
+]

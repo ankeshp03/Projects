@@ -1,0 +1,33 @@
+.sideMenu {
+    height: 100%;
+    margin: 0 -15px;
+    padding: 15px 0;
+    position: fixed;
+    width: 16.66667%;
+    overflow-y: auto;
+    flex-wrap: nowrap;
+    transition: width 0.3s;
+    background-color: #fff;
+    box-shadow: -5px 0px 15px 0px rgba(0, 0, 0, 0.3);
+    .menuItem {
+        .menuLink {
+            padding: 15px;
+            color: #777;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition-duration: 0.3s;
+            &:hover {
+                color: #1a1a1a;
+            }
+            &.active {
+                color: #1a1a1a;
+                background-color: inherit;
+            }
+        }
+    }
+    @media (min-width: 576px) and (max-width: 992px) {
+        & {
+            width: 25%;
+        }
+    }
+}

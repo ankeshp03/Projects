@@ -1,0 +1,65 @@
+[
+    {
+        "key": "pieChart",
+        "title": "Pie Chart",
+        "description": "",
+        "path": "piechart",
+        "isComplete": false
+    },
+    {
+        "key": "treeMap",
+        "title": "Tree Map",
+        "description": "",
+        "path": "treemap",
+        "isComplete": false
+    },
+    {
+        "key": "lineChart",
+        "title": "Line Chart",
+        "description": "",
+        "path": "linechart",
+        "isComplete": false
+    },
+    {
+        "key": "radarChart",
+        "title": "Radar Chart",
+        "description": "",
+        "path": "radarchart",
+        "isComplete": false
+    },
+    {
+        "key": "donutChart",
+        "title": "Donut Chart",
+        "description": "",
+        "path": "donutchart",
+        "isComplete": false
+    },
+    {
+        "key": "gaugeChart",
+        "title": "Gauge Chart",
+        "description": "",
+        "path": "gaugechart",
+        "isComplete": true
+    },
+    {
+        "key": "bubbleChart",
+        "title": " Bubble Chart",
+        "description": "",
+        "path": " bubblechart",
+        "isComplete": false
+    },
+    {
+        "key": "verticalBarChart",
+        "title": "Vertical Bar Chart",
+        "description": "",
+        "path": "verticalbarchart",
+        "isComplete": true
+    },
+    {
+        "key": "horizontalBarChart",
+        "title": "Horizontal Bar Chart",
+        "description": "",
+        "path": "Horizontalbarchart",
+        "isComplete": false
+    }
+]

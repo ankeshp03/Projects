@@ -1,0 +1,12 @@
+.d3ChartsContainer {
+    .headerContainer {
+        display: flex;
+        align-items: center;
+        .header {
+            flex-grow: 1;
+        }
+    }
+    .sideMenuContainer {
+        min-height: calc(100vh - 45px);
+    }
+}

@@ -1,0 +1,14 @@
+.defaultPageContainer {
+    font-size: 1.2rem;
+    padding: 30px 50px;
+    .imageContainer {
+        display: flex;
+        justify-content: center;
+        .image {
+            opacity: 0.5;
+            border-radius: 8px;
+            pointer-events: none;
+            filter: brightness(1.1);
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "value": 80,
+    "maxValue": 100,
+    "displayKey": "Current",
+    "displayValue": "80%",
+    "arcs": [
+        {
+            "key": "red",
+            "value": 1,
+            "displayKey": "Red",
+            "displayValue": "33%",
+            "fill": "#f35e5e"
+        },
+        {
+            "key": "amber",
+            "value": 1,
+            "displayKey": "Amber",
+            "displayValue": "33%",
+            "fill": "#ffbf00"
+        },
+        {
+            "key": "green",
+            "value": 1,
+            "displayKey": "Green",
+            "displayValue": "33%",
+            "fill": "#61bb61"
+        }
+    ]
+}
