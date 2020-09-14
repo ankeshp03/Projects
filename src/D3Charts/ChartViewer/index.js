@@ -52,7 +52,7 @@ const generateData = (data, options) => {
 const ChartViewer = ({ chart: Chart, data: defaultData, options, title, generator = null }) => {
     const [data, setData] = useState(defaultData);
     const getData = () => {
-        setData(generator(generateData) ?? generateData(data[0]));
+        setData(generator?.(generateData) ?? generateData(data[0]));
     }
     return (
         <Row className="chartViewerRow">

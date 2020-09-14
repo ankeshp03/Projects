@@ -8,7 +8,7 @@ import './home-styles.scss';
 const Home = () => {
     return (
         <Container fluid className="projectsContainer wrapper">
-            <Header title="Projects" url="#home" />
+            <Header header="Projects" url="#" />
             <Row className="project-row">
                 {
                     ProjectList.map(project => (
