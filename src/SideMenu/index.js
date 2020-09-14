@@ -1,5 +1,6 @@
 import React from 'react';
 import { Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './sideMenu-styles.scss';
 
 const SideMenu = ({ menu = [], activeKey = "", options = {} }) => {
@@ -10,11 +11,13 @@ const SideMenu = ({ menu = [], activeKey = "", options = {} }) => {
                     return (
                         <Nav.Item key={item.key} className={`menuItem ${(options?.menuItemClass ?? "")}${(item?.isComplete ? "" : " strike")}`}>
                             <Nav.Link
-                                href={`#${options?.route}${item.path}`}
+                                as="div"
                                 eventKey={item.key}
-                                className={`menuLink ${(options?.menuLinkClass ?? "")}`}
+                                className={`menuLinkContainer ${(options?.menuLinkClass ?? "")}`}
                             >
-                                {item.title}
+                                <Link to={{ pathname: `${options?.route}${item.path}`, state: item }} className="menuLink">
+                                    {item.title}
+                                </Link>
                             </Nav.Link>
                         </Nav.Item>
                     );

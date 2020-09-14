@@ -1,9 +1,14 @@
 [
     {
-        "show": false,
         "key": "d3Charts",
         "title": "D3 Charts",
         "description": "Charts and graphs visualization using D3js.",
         "path": "/d3charts"
+    },
+    {
+        "key": "cssArts",
+        "title": "CSS Arts",
+        "description": "Arts in pure CSS",
+        "path": "/cssarts"
     }
 ]

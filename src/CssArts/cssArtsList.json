@@ -1,0 +1,51 @@
+[
+    {
+        "key": "pikachu",
+        "title": "Pikachu",
+        "description": "",
+        "path": "pikachu",
+        "isComplete": true
+    },
+    {
+        "key": "umbrella",
+        "title": "Umbrella",
+        "description": "",
+        "path": "umbrella",
+        "isComplete": true
+    },
+    {
+        "key": "tesseract",
+        "title": "Tesseract",
+        "description": "",
+        "path": "tesseract",
+        "isComplete": true
+    },
+    {
+        "key": "cssMenu",
+        "title": "CSS Menu",
+        "description": "",
+        "path": "cssmenu",
+        "isComplete": true
+    },
+    {
+        "key": "IndianFlag",
+        "title": "Indian Flag",
+        "description": "",
+        "path": "flag",
+        "isComplete": true
+    },
+    {
+        "key": "mobileScreen",
+        "title": "Mobile Screen",
+        "description": "",
+        "path": "mobile",
+        "isComplete": true
+    },
+    {
+        "key": "hamburgerMenu",
+        "title": "Hamburger Menu",
+        "description": "",
+        "path": "hamburgermenu",
+        "isComplete": true
+    }
+]

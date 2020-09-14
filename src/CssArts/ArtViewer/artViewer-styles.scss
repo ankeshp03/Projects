@@ -1,0 +1,29 @@
+.artViewerRow {
+    margin-top: 15px;
+    min-height: calc(100vh - 60px);
+    .pikachuContainer {
+        transform: scale(0.8);
+    }
+    .loaderContainer {
+        min-height: calc(100vh - 66px);
+    }
+    .tab-content {
+        height: calc(100% - 35px);
+    }
+    .tab-pane,
+    .codeContainer-row {
+        height: 100%;
+    }
+    .codeViewerContainer {
+        margin-top: -15px;
+        padding-top: 15px;
+        .codeContainer {
+            height: 100%;
+            position: absolute;
+            width: calc(100% - 30px);
+            .loaderContainer {
+                min-height: calc(100vh - 85px);
+            }
+        }
+    }
+}

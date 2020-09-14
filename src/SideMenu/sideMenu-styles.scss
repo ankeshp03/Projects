@@ -10,17 +10,22 @@
     background-color: #fff;
     box-shadow: -5px 0px 15px 0px rgba(0, 0, 0, 0.3);
     .menuItem {
-        .menuLink {
+        .menuLinkContainer {
             padding: 15px;
-            color: #777;
-            font-weight: 500;
-            transition-duration: 0.3s;
-            &:hover {
-                color: #1a1a1a;
+            .menuLink {
+                color: #777;
+                font-weight: 500;
+                text-decoration: none;
+                transition-duration: 0.3s;
+                &:hover {
+                    color: #1a1a1a;
+                }
             }
             &.active {
-                color: #1a1a1a;
                 background-color: inherit;
+                .menuLink {
+                    color: #1a1a1a;
+                }
             }
         }
     }

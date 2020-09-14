@@ -5,7 +5,7 @@ import ChartAnimationImage from './../ChartAssets/assets/chart_animations.gif';
 const DefaultPage = () => {
     return (
         <div className="defaultPageContainer">
-            <h3 className="mB20">D3 Charts</h3>
+            <h4 className="mB20">D3 Charts</h4>
             <p>
                 This is a collection of sample charts created using D3.js, a JavaScript library.
             </p>
