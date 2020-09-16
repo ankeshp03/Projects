@@ -40,12 +40,5 @@
         "description": "",
         "path": "mobile",
         "isComplete": true
-    },
-    {
-        "key": "hamburgerMenu",
-        "title": "Hamburger Menu",
-        "description": "",
-        "path": "hamburgermenu",
-        "isComplete": true
     }
 ]

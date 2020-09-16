@@ -3,4 +3,31 @@
     .navbar-brand {
         font-weight: 500;
     }
+    .hamburgerContainer {
+        cursor: pointer;
+        margin-right: 1rem;
+        .bar-1,
+        .bar-2,
+        .bar-3 {
+            width: 20px;
+            height: 3px;
+            margin: 3px 0;
+            transition: 0.5s;
+            border-radius: 5px;
+            background-color: #000000e6;
+        }
+        &.open {
+            .bar-1 {
+                height: 2.5px;
+                transform: rotate(45deg) translate(5px, 3.5px);
+            }
+            .bar-2 {
+                opacity: 0;
+            }
+            .bar-3 {
+                height: 2.5px;
+                transform: rotate(135deg) translate(-4.5px, 3.5px);
+            }
+        }
+    }
 }

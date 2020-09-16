@@ -10,7 +10,7 @@ import ChartList from './chartsList.json';
 const D3Charts = ({ match }) => {
     return (
         <Container fluid className="d3ChartsContainer wrapper">
-            <Header header="Projects" subHeader="D3 Charts" url="#" subUrl="#d3charts" />
+            <Header header="Projects" subHeader="D3 Charts" url="#" subUrl="#d3charts" isMenuPresent={true} />
             <Row>
                 <Col sm={3} lg={2} className="sideMenuContainer animatCol">
                     <SideMenu title={"Charts List"} menu={ChartList} options={{ route: `${match.url}/` }} />

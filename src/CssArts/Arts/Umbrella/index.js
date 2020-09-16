@@ -2,21 +2,25 @@ import './umbrella-styles.css';
 
 const code = {};
 
-code.html = `
-<div class="umbrella">
+code.html =`
+    <div class="umbrellaContainer">
     <div class="top"></div>
-    <div class="curve-1"></div>
-    <div class="curve-2"></div>
+    <div class="umbrella" >
+        <div class="curve-1"></div>
+        <div class="curve-2"></div>
+    </div >
     <div class="handle"></div>
-</div>
+</div >
 `.trim();
 
 code.css = `
-    .umbrella {
+    .umbrellaContainer .umbrella {
+        left: 50%;
         width: 200px;
-        height: 65px;
-        margin: 30px auto 0;
+        height: 70px;
         position: relative;
+        display: inline-block;
+        transform: translateX(-50%);
         border-radius: 50% 50% 0 0/100% 100% 0 0;
         background: radial-gradient(
             ellipse at bottom center,
@@ -26,7 +30,7 @@ code.css = `
         );
     }
 
-    .umbrella::before {
+    .umbrellaContainer .umbrella::before {
         top: 0;
         left: 15%;
         bottom: 0;
@@ -42,7 +46,7 @@ code.css = `
         );
     }
 
-    .umbrella::after {
+    .umbrellaContainer .umbrella::after {
         top: 0;
         left: 35%;
         bottom: 0;
@@ -53,19 +57,19 @@ code.css = `
         background: linear-gradient(to right, #76b915, #9bce51, #76b915);
     }
 
-    .umbrella .top {
+    .umbrellaContainer .top {
         left: 50%;
-        top: -7.5px;
+        top: 1px;
         width: 10px;
         height: 10px;
         content: "";
-        position: absolute;
+        position: relative;
         border-radius: 50%;
         transform: translateX(-50%);
         background: radial-gradient(ellipse at center, #a13131 10%, #551717 65%);
     }
 
-    .umbrella .curve-1 {
+    .umbrellaContainer .umbrella .curve-1 {
         width: 30px;
         content: "";
         height: 7px;
@@ -75,7 +79,7 @@ code.css = `
         border-radius: 50% 50% 0 0/100% 100% 0 0;
     }
 
-    .umbrella .curve-1::before {
+    .umbrellaContainer .umbrella .curve-1::before {
         bottom: 0;
         left: 30px;
         width: 40px;
@@ -86,7 +90,7 @@ code.css = `
         border-radius: 50% 50% 0 0/100% 100% 0 0;
     }
 
-    .umbrella .curve-1::after {
+    .umbrellaContainer .umbrella .curve-1::after {
         bottom: 0;
         left: 70px;
         z-index: 1;
@@ -98,7 +102,7 @@ code.css = `
         border-radius: 50% 50% 0 0/100% 100% 0 0;
     }
 
-    .umbrella .curve-2 {
+    .umbrellaContainer .umbrella .curve-2 {
         bottom: 0;
         left: 130px;
         z-index: 1;
@@ -110,7 +114,7 @@ code.css = `
         border-radius: 50% 50% 0 0/100% 100% 0 0;
     }
 
-    .umbrella .curve-2::before {
+    .umbrellaContainer .umbrella .curve-2::before {
         bottom: 0;
         left: 40px;
         z-index: 1;
@@ -122,13 +126,13 @@ code.css = `
         border-radius: 50% 50% 0 0/100% 100% 0 0;
     }
 
-    .umbrella .handle {
-        top: 89%;
+    .umbrellaContainer .handle {
         left: 50%;
+        top: -12px;
         width: 6px;
         z-index: 1;
         height: 90px;
-        position: absolute;
+        position: relative;
         background: linear-gradient(
             to right,
             #551717 15%,
@@ -138,7 +142,7 @@ code.css = `
         transform: translateX(-50%);
     }
 
-    .umbrella .handle::before {
+    .umbrellaContainer .handle::before {
         z-index: 1;
         right: 6px;
         width: 23px;
@@ -151,7 +155,7 @@ code.css = `
         border-radius: 0 0 50% 50%/0 0 100% 100%;
     }
 
-    .umbrella .handle::after {
+    .umbrellaContainer .handle::after {
         right: 0;
         content: "";
         width: 35px;

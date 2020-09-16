@@ -52,7 +52,7 @@ const ArtViewer = ({ data: { key = "", title = "" } = {} }) => {
     }, [key]);
     return (
         <Row className="artViewerRow">
-            <Col sm={7}>
+            <Col lg={7}>
                 <h5>{title}</h5>
                 {
                     elementDetails.html
@@ -66,7 +66,7 @@ const ArtViewer = ({ data: { key = "", title = "" } = {} }) => {
                         : <Loader />
                 }
             </Col>
-            <Col sm={5} className="codeViewerContainer borderLeft">
+            <Col lg={5} className="codeViewerContainer borderLeft">
                 <Tabs defaultActiveKey="html" id="codeTab" className="codeTab">
                     <Tab eventKey="html" title="HTML">
                         <Row className="codeContainer-row">

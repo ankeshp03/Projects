@@ -48,9 +48,11 @@ code.html = `
 
 code.css = `
     .pikachuContainer {
+        left: 50%;
         width: 600px;
         height: 510px;
         position: relative;
+        transform: translateX(-50%);
     }
     
     .pikachu {

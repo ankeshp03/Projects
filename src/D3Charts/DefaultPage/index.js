@@ -1,4 +1,5 @@
 import React from 'react';
+import {Image} from 'react-bootstrap';
 import "./defaultPage-styles.scss";
 import ChartAnimationImage from './../ChartAssets/assets/chart_animations.gif';
 
@@ -17,7 +18,7 @@ const DefaultPage = () => {
                     The chart that are striked out, are not yet completed.
             </p>
             <div className="imageContainer pT20">
-                <img src={ChartAnimationImage} alt={"Charts"} className="image" />
+                <Image src={ChartAnimationImage} fluid alt={"Charts"} className="image" />
             </div>
         </div>
     );

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Image} from 'react-bootstrap';
 import "./defaultPage-styles.scss";
 import CssAnimationImage from './../assets/css_animation.gif';
 
@@ -14,7 +15,7 @@ const DefaultPage = () => {
                     The CSS arts that are striked out, are not yet completed.
             </p>
             <div className="imageContainer pT20">
-                <img src={CssAnimationImage} alt={"CSS Animation"} className="image" />
+                <Image src={CssAnimationImage} fluid alt={"Charts"} className="image" />
             </div>
         </div>
     );
