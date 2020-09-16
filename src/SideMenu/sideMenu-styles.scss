@@ -41,8 +41,10 @@
         }
     }
     @media (min-width: 992px) {
-        left: 15px;
-        width: 16.66667%;
+        & {
+            left: 15px;
+            width: 16.66667%;
+        }
     }
     // @media (min-width: 578px) {
     //     & {

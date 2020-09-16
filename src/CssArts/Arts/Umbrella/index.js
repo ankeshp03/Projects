@@ -80,47 +80,47 @@ code.css = `
     }
 
     .umbrellaContainer .umbrella .curve-1::before {
-        bottom: 0;
+        bottom: -1px;
         left: 30px;
         width: 40px;
         content: "";
-        height: 7px;
+        height: 8px;
         position: absolute;
         background-color: #fff;
         border-radius: 50% 50% 0 0/100% 100% 0 0;
     }
 
     .umbrellaContainer .umbrella .curve-1::after {
-        bottom: 0;
+        bottom: -1px;
         left: 70px;
         z-index: 1;
         width: 60px;
         content: "";
-        height: 7px;
+        height: 8px;
         position: absolute;
         background-color: #fff;
         border-radius: 50% 50% 0 0/100% 100% 0 0;
     }
 
     .umbrellaContainer .umbrella .curve-2 {
-        bottom: 0;
+        bottom: -1px;
         left: 130px;
         z-index: 1;
         width: 40px;
         content: "";
-        height: 7px;
+        height: 8px;
         position: absolute;
         background-color: #fff;
         border-radius: 50% 50% 0 0/100% 100% 0 0;
     }
 
     .umbrellaContainer .umbrella .curve-2::before {
-        bottom: 0;
+        bottom: -1px;
         left: 40px;
         z-index: 1;
         width: 30px;
         content: "";
-        height: 7px;
+        height: 8px;
         position: absolute;
         background-color: #fff;
         border-radius: 50% 50% 0 0/100% 100% 0 0;
@@ -130,7 +130,7 @@ code.css = `
         left: 50%;
         top: -12px;
         width: 6px;
-        z-index: 1;
+        z-index: 0;
         height: 90px;
         position: relative;
         background: linear-gradient(
@@ -147,7 +147,7 @@ code.css = `
         right: 6px;
         width: 23px;
         content: "";
-        height: 14px;
+        height: 15px;
         bottom: -14px;
         position: absolute;
         background-color: #fff;

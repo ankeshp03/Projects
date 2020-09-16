@@ -5,7 +5,6 @@
         height: calc(100% - 37px);
     }
     .dataViewerContainer {
-        margin-top: -15px;
         padding-top: 15px;
         .jsonViewContainer {
             position: absolute;
@@ -16,8 +15,6 @@
             .object-content {
                 height: 100%;
                 .object-key-val {
-                    height: 100%;
-                    overflow-y: auto;
                     &::-webkit-scrollbar-track {
                         border-radius: 5px;
                         background-color: #f5f5f5;
@@ -33,6 +30,15 @@
                         border-radius: 5px;
                         background-color: #cecece;
                     }
+                }
+            }
+        }
+        @media (min-width: 768px) {
+            & {
+                margin-top: -15px;
+                .object-key-val {
+                    height: 100%;
+                    overflow-y: auto;
                 }
             }
         }

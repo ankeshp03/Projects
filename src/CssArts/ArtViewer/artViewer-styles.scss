@@ -1,6 +1,9 @@
 .artViewerRow {
     margin-top: 15px;
     min-height: calc(100vh - 60px);
+    .pikachu {
+        transform: scale(0.5);
+    }
     .loaderContainer {
         min-height: calc(100vh - 66px);
     }

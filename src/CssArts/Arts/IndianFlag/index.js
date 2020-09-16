@@ -3,38 +3,47 @@ import './IndianFlag-styles.css';
 const code = {};
 
 code.html = `
-    <div class="flag">
-        <div class="saffron"></div>
-        <div class="white"></div>
-        <div class="chakra">
-            <div class="spokes-container">
-                <div class="spoke"></div>
-                <div class="spoke"></div>
-                <div class="spoke"></div>
-                <div class="spoke"></div>
-                <div class="spoke"></div>
-                <div class="spoke"></div>
-                <div class="spoke"></div>
-                <div class="spoke"></div>
+    <div class="flagContainer">
+        <div class="flag">
+            <div class="saffron"></div>
+            <div class="white"></div>
+            <div class="chakra">
+                <div class="spokes-container">
+                    <div class="spoke"></div>
+                    <div class="spoke"></div>
+                    <div class="spoke"></div>
+                    <div class="spoke"></div>
+                    <div class="spoke"></div>
+                    <div class="spoke"></div>
+                    <div class="spoke"></div>
+                    <div class="spoke"></div>
+                </div>
             </div>
+            <div class="green"></div>
         </div>
-        <div class="green"></div>
-    </div>
-    <div class="bar"></div>
-    <div class="stand">
-        <div class="step-1"></div>
-        <div class="step-2"></div>
-        <div class="step-3"></div>
+        <div class="bar"></div>
+        <div class="stand">
+            <div class="step-1"></div>
+            <div class="step-2"></div>
+            <div class="step-3"></div>
+        </div>
     </div>
 `.trim();
 
 code.css = `
-    .flag {
-        max-width: 300px;
-        height: 150px;
-        display: grid;
-        margin: 0 auto;
+    .flagContainer {
+        left: 50%;
+        width: 325px;
         position: relative;
+        transform: translateX(-50%);
+    }
+    .flag {
+        top: 30px;
+        width: 215px;
+        height: 125px;
+        display: grid;
+        position: relative;
+        left: calc(100% - 220px);
     }
     .flag .saffron {
         background-color: #ff9933;
@@ -132,11 +141,11 @@ code.css = `
     }
 
     .bar {
-        top: -160px;
+        left: 95px;
+        top: -100px;
         width: 10px;
-        height: 500px;
+        height: 350px;
         position: relative;
-        left: calc(50% - 300px / 2);
         background: linear-gradient(
             to right,
             #82501f 0%,
@@ -146,14 +155,13 @@ code.css = `
     }
 
     .stand {
-        top: 500px;
-        width: 300px;
+        left: 5px;
+        top: 375px;
+        width: 190px;
         height: 100px;
         display: grid;
         position: absolute;
-        margin-bottom: 10px;
         justify-items: center;
-        left: calc(50% - 295px);
     }
 
     .stand .step-1 {

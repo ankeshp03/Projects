@@ -56,11 +56,11 @@ const ChartViewer = ({ chart: Chart, data: defaultData, options, title, generato
     }
     return (
         <Row className="chartViewerRow">
-            <Col sm={7}>
+            <Col md={7}>
                 <h5>{title}</h5>
                 <Chart data={data} options={options} />
             </Col>
-            <Col sm={5} className="dataViewerContainer borderLeft">
+            <Col md={5} className="dataViewerContainer borderLeft">
                 <h5 className="headerContainer">
                     <span className="header">Data</span>
                     <Button className="randomDataBtn" onClick={getData}>Randomize Data</Button>
