@@ -9,4 +9,12 @@
     .sideMenuContainer {
         min-height: calc(100vh - 45px);
     }
+    .hamburgerContainer {
+        display: block;
+        @media (min-width: 992px) {
+            & {
+                display: none;
+            }
+        }
+    }
 }
