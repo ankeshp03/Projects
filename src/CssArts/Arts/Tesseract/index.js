@@ -36,189 +36,189 @@ code.html = `
 `.trim();
 
 code.css = `
-    .tesseractContainer {
-        margin: 0;
-        background-color: #333;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 500px;
-    }
-    .tesseractContainer .tesseract {
-        position: relative;
-        transform: rotateX(15deg) rotateY(15deg);
-        transform-style: preserve-3d;
-        animation: spin 20s infinite linear;
-    }
+.tesseractContainer {
+    margin: 0;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+.tesseractContainer .tesseract {
+    position: relative;
+    transform: rotateX(15deg) rotateY(15deg);
+    transform-style: preserve-3d;
+    animation: spin 20s infinite linear;
+}
 
-    @keyframes spin {
-        from {
-            transform: rotate(0);
-        }
-        to {
-            transform: rotateX(360deg) rotateY(360deg);
-        }
+@keyframes spin {
+    from {
+        transform: rotate(0);
     }
+    to {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
 
-    .tesseractContainer .cube-1,
-    .tesseractContainer .cube-2 {
+.tesseractContainer .cube-1,
+.tesseractContainer .cube-2 {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+@keyframes animateCube-1 {
+    0% {
         width: 100px;
         height: 100px;
-        position: relative;
-        transform-style: preserve-3d;
     }
-
-    @keyframes animateCube-1 {
-        0% {
-            width: 100px;
-            height: 100px;
-        }
-        25% {
-            width: 100px;
-            height: 100px;
-        }
-        50% {
-            width: 200px;
-            height: 200px;
-        }
-        75% {
-            width: 200px;
-            height: 200px;
-        }
-        100% {
-            width: 100px;
-            height: 100px;
-        }
+    25% {
+        width: 100px;
+        height: 100px;
     }
-
-    .tesseractContainer .sides {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        color: #fff;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        box-sizing: border-box;
-        border: 2px solid #ccc;
-    }
-
-    .tesseractContainer .front {
-        transform: translateZ(50px);
-    }
-
-    .tesseractContainer .top {
-        transform: rotateX(-90deg) translateY(-50%);
-        transform-origin: top center;
-    }
-
-    .tesseractContainer .back {
-        transform: translateZ(-50px) rotateX(-180deg);
-        transform-origin: center;
-    }
-
-    .tesseractContainer .bottom {
-        transform: rotateX(90deg) translateY(50%);
-        transform-origin: bottom center;
-    }
-
-    .tesseractContainer .left {
-        transform: rotateY(270deg) translateX(-50%);
-        transform-origin: center left;
-    }
-
-    .tesseractContainer .right {
-        transform: rotateY(-270deg) translateX(50%);
-        transform-origin: top right;
-    }
-
-    .tesseractContainer .cube-2 {
-        top: calc(50% - 100px);
-        left: calc(50% - 100px);
+    50% {
         width: 200px;
         height: 200px;
-        position: absolute;
-        transform-origin: center;
     }
-
-    .tesseractContainer .cube-2 .front {
-        transform: translateZ(100px);
+    75% {
+        width: 200px;
+        height: 200px;
     }
-
-    .tesseractContainer .cube-2 .back {
-        transform: translateZ(-100px) rotateX(-180deg);
-        transform-origin: center;
-    }
-
-    .tesseractContainer .joins {
+    100% {
         width: 100px;
         height: 100px;
-        top: calc(50% - 50px);
-        left: calc(50% - 50px);
-        position: absolute;
     }
+}
 
-    .tesseractContainer .line {
-        height: 2px;
-        position: absolute;
-        background-color: #ccc;
-    }
+.tesseractContainer .sides {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+}
 
-    .tesseractContainer .line-1 {
-        width: 85px;
-        transform: translateZ(-50px) translateX(0px) translateY(0px) rotateX(90deg)
-            rotateY(45deg) rotateZ(-145deg);
-        transform-origin: top left;
-    }
+.tesseractContainer .front {
+    transform: translateZ(50px);
+}
 
-    .tesseractContainer .line-2 {
-        width: 85px;
-        transform: translateZ(50px) translateX(0px) translateY(0px) rotateX(90deg)
-            rotateY(45deg) rotateZ(145deg);
-        transform-origin: top left;
-    }
+.tesseractContainer .top {
+    transform: rotateX(-90deg) translateY(-50%);
+    transform-origin: top center;
+}
 
-    .tesseractContainer .line-3 {
-        width: 85px;
-        transform: translateZ(50px) translateX(0px) translateY(100px)
-            rotateX(-90deg) rotateY(45deg) rotateZ(-145deg);
-        transform-origin: top left;
-    }
+.tesseractContainer .back {
+    transform: translateZ(-50px) rotateX(-180deg);
+    transform-origin: center;
+}
 
-    .tesseractContainer .line-4 {
-        width: 85px;
-        transform: translateZ(-50px) translateX(0px) translateY(100px)
-            rotateX(-90deg) rotateY(45deg) rotateZ(145deg);
-        transform-origin: top left;
-    }
+.tesseractContainer .bottom {
+    transform: rotateX(90deg) translateY(50%);
+    transform-origin: bottom center;
+}
 
-    .tesseractContainer .line-5 {
-        width: 85px;
-        transform: translateZ(50px) translateX(100px) translateY(0px)
-            rotateX(-90deg) rotateY(45deg) rotateZ(-35deg);
-        transform-origin: top left;
-    }
+.tesseractContainer .left {
+    transform: rotateY(270deg) translateX(-50%);
+    transform-origin: center left;
+}
 
-    .tesseractContainer .line-6 {
-        width: 85px;
-        transform: translateZ(-50px) translateX(100px) translateY(0px)
-            rotateX(-90deg) rotateY(45deg) rotateZ(35deg);
-        transform-origin: top left;
-    }
+.tesseractContainer .right {
+    transform: rotateY(-270deg) translateX(50%);
+    transform-origin: top right;
+}
 
-    .tesseractContainer .line-7 {
-        width: 85px;
-        transform: translateZ(-50px) translateX(100px) translateY(100px)
-            rotateX(90deg) rotateY(45deg) rotateZ(-35deg);
-        transform-origin: top left;
-    }
+.tesseractContainer .cube-2 {
+    top: calc(50% - 100px);
+    left: calc(50% - 100px);
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    transform-origin: center;
+}
 
-    .tesseractContainer .line-8 {
-        width: 85px;
-        transform: translateZ(50px) translateX(100px) translateY(100px)
-            rotateX(90deg) rotateY(45deg) rotateZ(35deg);
-        transform-origin: top left;
-    }
+.tesseractContainer .cube-2 .front {
+    transform: translateZ(100px);
+}
+
+.tesseractContainer .cube-2 .back {
+    transform: translateZ(-100px) rotateX(-180deg);
+    transform-origin: center;
+}
+
+.tesseractContainer .joins {
+    width: 100px;
+    height: 100px;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    position: absolute;
+}
+
+.tesseractContainer .line {
+    height: 2px;
+    position: absolute;
+    background-color: #ccc;
+}
+
+.tesseractContainer .line-1 {
+    width: 85px;
+    transform: translateZ(-50px) translateX(0px) translateY(0px) rotateX(90deg)
+        rotateY(45deg) rotateZ(-145deg);
+    transform-origin: top left;
+}
+
+.tesseractContainer .line-2 {
+    width: 85px;
+    transform: translateZ(50px) translateX(0px) translateY(0px) rotateX(90deg)
+        rotateY(45deg) rotateZ(145deg);
+    transform-origin: top left;
+}
+
+.tesseractContainer .line-3 {
+    width: 85px;
+    transform: translateZ(50px) translateX(0px) translateY(100px)
+        rotateX(-90deg) rotateY(45deg) rotateZ(-145deg);
+    transform-origin: top left;
+}
+
+.tesseractContainer .line-4 {
+    width: 85px;
+    transform: translateZ(-50px) translateX(0px) translateY(100px)
+        rotateX(-90deg) rotateY(45deg) rotateZ(145deg);
+    transform-origin: top left;
+}
+
+.tesseractContainer .line-5 {
+    width: 85px;
+    transform: translateZ(50px) translateX(100px) translateY(0px)
+        rotateX(-90deg) rotateY(45deg) rotateZ(-35deg);
+    transform-origin: top left;
+}
+
+.tesseractContainer .line-6 {
+    width: 85px;
+    transform: translateZ(-50px) translateX(100px) translateY(0px)
+        rotateX(-90deg) rotateY(45deg) rotateZ(35deg);
+    transform-origin: top left;
+}
+
+.tesseractContainer .line-7 {
+    width: 85px;
+    transform: translateZ(-50px) translateX(100px) translateY(100px)
+        rotateX(90deg) rotateY(45deg) rotateZ(-35deg);
+    transform-origin: top left;
+}
+
+.tesseractContainer .line-8 {
+    width: 85px;
+    transform: translateZ(50px) translateX(100px) translateY(100px)
+        rotateX(90deg) rotateY(45deg) rotateZ(35deg);
+    transform-origin: top left;
+}
 `.trim();
 
 export default code;
