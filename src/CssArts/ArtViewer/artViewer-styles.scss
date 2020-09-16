@@ -16,7 +16,6 @@
         padding-top: 15px;
         .codeContainer {
             height: 100%;
-            width: calc(100% - 30px);
             .loaderContainer {
                 min-height: calc(100vh - 85px);
             }
@@ -30,6 +29,7 @@
             margin-top: -15px;
             .codeContainer {
                 position: absolute;
+                width: calc(100% - 30px);
             }
         }
     }
