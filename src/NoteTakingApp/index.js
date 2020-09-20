@@ -48,15 +48,15 @@ const NoteApp = () => {
         updateNotes([...notes, newNote]);
     }
 
-    const handleNoteEdit = (idx, key) => (e) => {
+    const handleNoteEdit = (noteId, key) => (e) => {
         let newNoteList = [...editNoteList];
-        newNoteList[idx][key] = e.target.value;
+        newNoteList[newNoteList.findIndex(({ id }) => id === noteId)][key] = e.target.value;
         updateEditNoteList(newNoteList);
     };
 
-    function saveNote(idx, noteId) {
+    function saveNote(noteId) {
         let allNotes = [...notes];
-        allNotes[idx] = {
+        allNotes[allNotes.findIndex(({ id }) => id === noteId)] = {
             ...editNoteList.filter(({ id }) => id === noteId)[0]
         };
         updateNotes(allNotes);
@@ -65,7 +65,7 @@ const NoteApp = () => {
 
     return (
         <Container fluid className="notesWrapper wrapper">
-            <Header header="Projects" subHeader="Note Taking App"  url="#" subUrl="#notesapp" />
+            <Header header="Projects" subHeader="Note Taking App" url="#" subUrl="#notesapp" />
             <ul id="notesContainer" className={(showAddForm ? "showForm" : "")}>
                 <li id="addNoteContainer" className="noteContainer">
                     <span className="addIcon" title="Click to add a note" onClick={() => setShowFormStatus(true)}>+</span>
@@ -84,7 +84,7 @@ const NoteApp = () => {
                     </div>
                 </li>
                 {
-                    notes.map((note, idx) => {
+                    notes.map(note => {
                         let editNote = editNoteList.filter(({ id }) => id === note.id);
                         let isEditEnabled = editNote.length > 0;
                         let data = (isEditEnabled) ? editNote[0] : note;
@@ -96,7 +96,7 @@ const NoteApp = () => {
                                         className={`noteTitle noBorder${(isEditEnabled ? "" : " defaultCursor")}`}
                                         title={data.title}
                                         value={data.title}
-                                        onChange={handleNoteEdit(idx, "title")}
+                                        onChange={handleNoteEdit(note.id, "title")}
                                         readOnly={(isEditEnabled ? false : true)}
                                     />
                                     <span className="iconContainer">
@@ -108,7 +108,7 @@ const NoteApp = () => {
                                             className="fa fa-trash icon"
                                             title="Delete Note"
                                             onClick={() => updateNotes([...notes.filter(({ id }) => id !== note.id)])}></i>
-                                        <select value={data.colorTheme} className="colorSelector" title="Select Color" onChange={handleNoteEdit(idx, "colorTheme")}>
+                                        <select value={data.colorTheme} className="colorSelector" title="Select Color" onChange={handleNoteEdit(note.id, "colorTheme")}>
                                             <option value="C4F0E8" className="color color_C4F0E8"></option>
                                             <option value="FFC1B1" className="color color_FFC1B1"></option>
                                             <option value="F2EBD7" className="color color_F2EBD7"></option>
@@ -120,11 +120,11 @@ const NoteApp = () => {
                                 <textarea
                                     className={`noteText noBorder${(isEditEnabled ? "" : " defaultCursor")}`}
                                     value={data.text}
-                                    onChange={handleNoteEdit(idx, "text")}
+                                    onChange={handleNoteEdit(note.id, "text")}
                                     readOnly={(isEditEnabled ? false : true)}
                                 ></textarea>
                                 <div className="buttonContainer">
-                                    <button className="btn saveBtn" style={{}} onClick={() => saveNote(idx, note.id)}>Save</button>
+                                    <button className="btn saveBtn" style={{}} onClick={() => saveNote(note.id)}>Save</button>
                                     <button className="btn cancelBtn" onClick={() => updateEditNoteList([...editNoteList.filter(({ id }) => id !== note.id)])}>Cancel</button>
                                 </div>
                             </li>
