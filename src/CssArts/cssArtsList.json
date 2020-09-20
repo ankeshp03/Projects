@@ -40,5 +40,12 @@
         "description": "",
         "path": "mobile",
         "isComplete": true
+    },
+    {
+        "key": "sevenSegmentDisplay",
+        "title": "Seven Segment Display",
+        "description": "",
+        "path": "sevensegmentdisplay",
+        "isComplete": true
     }
 ]

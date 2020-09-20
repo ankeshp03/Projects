@@ -38,17 +38,17 @@ code.html = `
 code.css = `
 .tesseractContainer {
     margin: 0;
-    background-color: #333;
+    height: 400px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 500px;
+    justify-content: center;
+    background-color: #333;
 }
 .tesseractContainer .tesseract {
     position: relative;
-    transform: rotateX(15deg) rotateY(15deg);
     transform-style: preserve-3d;
     animation: spin 20s infinite linear;
+    transform: rotateX(15deg) rotateY(15deg);
 }
 
 @keyframes spin {
@@ -96,10 +96,10 @@ code.css = `
     height: 100%;
     display: flex;
     color: #fff;
-    justify-content: center;
-    align-items: center;
     position: absolute;
+    align-items: center;
     box-sizing: border-box;
+    justify-content: center;
     border: 2px solid #ccc;
 }
 
@@ -133,11 +133,11 @@ code.css = `
 }
 
 .tesseractContainer .cube-2 {
-    top: calc(50% - 100px);
-    left: calc(50% - 100px);
     width: 200px;
     height: 200px;
     position: absolute;
+    top: calc(50% - 100px);
+    left: calc(50% - 100px);
     transform-origin: center;
 }
 

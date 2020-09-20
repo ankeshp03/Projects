@@ -5,6 +5,7 @@ import Loader from './DataLoader';
 import Home from './Home';
 const D3Charts = lazy(() => import('./D3Charts'));
 const CssArts = lazy(() => import('./CssArts'));
+const NotesApp = lazy(() => import('./NoteTakingApp'));
 
 const Routes = () => {
     return (
@@ -15,6 +16,7 @@ const Routes = () => {
                 <Route exact path="/projects" component={Home} />
                 <Route path="/d3charts" render={(props) => <D3Charts {...props} />} />
                 <Route path="/cssarts" render={(props) => <CssArts {...props} />} />
+                <Route path="/notesapp" render={(props) => <NotesApp {...props} />} />
             </Switch>
         </Suspense>
     );

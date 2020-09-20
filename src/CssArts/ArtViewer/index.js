@@ -16,6 +16,7 @@ const getComponent = (key) => {
         case 'cssMenu': return import('./../Arts/CssMenu');
         case 'umbrella': return import('./../Arts/Umbrella');
         case 'hamburgerMenu': return import('./../Arts/HamburgerMenu');
+        case 'sevenSegmentDisplay': return import('./../Arts/SevenSegmentDisplay');
         default: return import('./../Arts/Pikachu');
     }
 };

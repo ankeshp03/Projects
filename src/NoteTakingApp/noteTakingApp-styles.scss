@@ -1,0 +1,234 @@
+.notesWrapper {
+    padding: 15px;
+    #notesContainer {
+        margin: 0;
+        padding: 0;
+        color: #555;
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        font-family: Arial, Helvetica, sans-serif;
+        .addIcon {
+            top: 50%;
+            left: 50%;
+            opacity: 1;
+            width: 42px;
+            font-size: 45px;
+            cursor: pointer;
+            line-height: 42px;
+            position: absolute;
+            border-radius: 5px;
+            text-align: center;
+            visibility: visible;
+            border: 1px dashed #aaa;
+            transform: translate(-50%, -50%);
+            transition: visibility, opacity 0.3s ease-in-out;
+        }
+        .header {
+            margin-bottom: 10px;
+        }
+        .noteTitle {
+            padding: 5px;
+            outline: none;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            background: #ffffff50;
+            width: calc(100% - 55px);
+        }
+        #newNoteTitle,
+        #newNoteText {
+            opacity: 0;
+            visibility: hidden;
+            border-radius: 5px;
+            border: 1px solid #cccccc;
+            transition: visibility, opacity 0.3s ease-in-out;
+        }
+        #newNoteTitle {
+            width: calc(100% - 40px);
+        }
+
+        // #newNoteText {
+        //     height: calc(100% - 75px);
+        // }
+        .buttonContainer {
+            .btn {
+                opacity: 0;
+                border: none;
+                color: #fff;
+                outline: none;
+                cursor: pointer;
+                padding: 4px 0px;
+                visibility: hidden;
+                border-radius: 5px;
+                width: calc(50% - 5px);
+                transition: visibility, opacity 0.3s ease-in-out;
+                &:first-child {
+                    margin-right: 10px;
+                }
+            }
+
+            .saveBtn {
+                background-color: #33cc99;
+                &:hover {
+                    background-color: #28b385;
+                }
+
+                &:active {
+                    background-color: #27a57b;
+                }
+
+                &:disabled {
+                    cursor: not-allowed;
+                    background-color: #71deba;
+                }
+
+                &:disabled:hover {
+                    background-color: #71deba;
+                }
+            }
+            .cancelBtn {
+                background-color: #f37777;
+                &:hover {
+                    background-color: #da6969;
+                }
+
+                &:active {
+                    background-color: #c25858;
+                }
+            }
+        }
+        .noteText {
+            width: 100%;
+            resize: none;
+            padding: 5px;
+            outline: none;
+            line-height: 20px;
+            background: #ffffff50;
+            height: calc(100% - 75px);
+            transition: visibility, opacity 0.3s ease-in-out;
+        }
+        .noteContainer {
+            margin: 10px;
+            padding: 10px;
+            min-height: 200px;
+            position: relative;
+            border-radius: 5px;
+            transition: flex-basis 0.3s ease-in-out;
+            flex-basis: calc(100% / 1);
+            box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.25);
+        }
+
+        #addNoteContainer {
+            box-shadow: none;
+            background-color: #fff;
+            border: 1px dashed #aaa;
+        }
+
+        .readonly {
+            pointer-events: none;
+        }
+
+        .iconContainer {
+            float: right;
+            cursor: default;
+            font-size: 15px;
+            .icon {
+                cursor: pointer;
+                &:first-child {
+                    margin-right: 15px;
+                }
+            }
+        }
+        .noBorder {
+            border: none;
+        }
+        .colorSelector {
+            opacity: 0;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            position: absolute;
+            visibility: hidden;
+            border-radius: 50%;
+            color: transparent;
+            transition: visibility, opacity 0.3s ease-in-out;
+            background: linear-gradient(45deg, #9bc99e, #ffc1b1);
+        }
+        .color_C4F0E8 {
+            background-color: #c4f0e8;
+        }
+        .color_FFC1B1 {
+            background-color: #ffc1b1;
+        }
+        .color_F2EBD7 {
+            background-color: #f2ebd7;
+        }
+        .color_AFE9B2 {
+            background-color: #afe9b2;
+        }
+        .color_EDBD8C {
+            background-color: #edbd8c;
+        }
+
+        .defaultCursor {
+            cursor: default;
+        }
+
+        .editMode {
+            .noteText {
+                height: calc(100% - 75px);
+            }
+            .btn {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        &.showForm {
+            .addIcon {
+                opacity: 0;
+                visibility: hidden;
+            }
+            #newNoteTitle,
+            #newColorSelector,
+            #newNoteText,
+            #saveNote,
+            #cancelNewNoteSave {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        .showEditForm {
+            .icon {
+                opacity: 0;
+                visibility: hidden;
+            }
+            .btn,
+            .colorSelector {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+    @media only screen and (min-width: 401px) and (max-width: 750px) {
+        #notesContainer .noteContainer {
+            flex-basis: calc(100% / 2 - 20px);
+        }
+    }
+
+    @media only screen and (min-width: 751px) and (max-width: 1100px) {
+        #notesContainer .noteContainer {
+            flex-basis: calc(100% / 3 - 20px);
+        }
+    }
+
+    @media only screen and (min-width: 1101px) {
+        #notesContainer .noteContainer {
+            flex-basis: calc(100% / 4 - 20px);
+        }
+    }
+}

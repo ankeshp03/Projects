@@ -10,5 +10,11 @@
         "title": "CSS Arts",
         "description": "Arts in pure CSS",
         "path": "/cssarts"
+    },
+    {
+        "key": "noteTakingApp",
+        "title": "Note Taking App",
+        "description": "Note taking application in React",
+        "path": "/notesapp"
     }
 ]

@@ -17,6 +17,7 @@ const Routes = ({ url, data }) => {
                 <Route path={`${url}/cssmenu`} render={() => <ArtViewer data={data} />} />
                 <Route path={`${url}/umbrella`} render={() => <ArtViewer data={data} />} />
                 <Route path={`${url}/hamburgermenu`} render={() => <ArtViewer data={data} />} />
+                <Route path={`${url}/sevensegmentdisplay`} render={() => <ArtViewer data={data} />} />
                 <Route exact path={`${url}`} render={() => <DefaultPage />} />
                 {/* <Route render={() => <NoChartPage />} /> */}
             </Switch>
