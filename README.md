@@ -7,8 +7,7 @@
 -   [Projects](#projects)
 -   [Technologies](#technologies)
 -   [Setup](#setup)
--   [Contact](#contact)
-- [License](#license)
+-   [License](#license)
 
 ## Projects
 
@@ -19,6 +18,7 @@
 ## Technologies
 
 -   CSS
+-   [SCSS](https://sass-lang.com/) - CSS preprocessor
 -   [D3](https://d3js.org/) - JavaScript library for visualizing data using web standards
 -   [React](http://reactjs.org/) - React is a JavaScript library for building user interfaces
 - [React Bootstrap](https://react-bootstrap.github.io/) - Front-End Stylesheet library built with React and Bootstrap
