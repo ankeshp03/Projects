@@ -13,9 +13,10 @@
     box-shadow: -5px 0px 15px 0px rgba(0, 0, 0, 0.3);
     .menuItem {
         .menuLinkContainer {
-            padding: 15px;
             .menuLink {
                 color: #777;
+                padding: 15px;
+                display: block;
                 font-weight: 500;
                 text-decoration: none;
                 transition-duration: 0.3s;

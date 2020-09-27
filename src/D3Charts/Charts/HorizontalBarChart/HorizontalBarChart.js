@@ -7,10 +7,10 @@ const defaultOptions = {
     width: 600,
     height: 465,
     margin: {
-        top: 5,
-        left: 5,
-        right: 5,
-        bottom: 5
+        top: 10,
+        left: 10,
+        right: 10,
+        bottom: 10
     },
     xAxis: {
         visibility: true,
@@ -24,16 +24,18 @@ const defaultOptions = {
         domain: true,
         lines: true
     },
-    barWidth: 25,
+    legends: false,
+    tooltip: true,
+    barHeight: 25,
     barTopRadius: 0,
     barBottomRadius: 0,
-    xAxisTextHeight: 20,
-    yAxisTextWidth: 60,
+    xAxisTextHeight: 50,
+    yAxisTextWidth: 50,
     dataLabels: {
         enabled: true,
         fill: "#444",
         fontSize: 13,
-        height: 20
+        height: 30
     },
     dataLabelsWrapper: {
         enabled: true,
@@ -73,7 +75,7 @@ const getChart = (node, data = [], options = {}) => {
             lines: options?.yAxis?.lines ?? defaultOptions.yAxis.lines,
             visibility: options?.yAxis?.visibility ?? defaultOptions.yAxis.visibility
         },
-        barWidth = options?.barWidth ?? defaultOptions.barWidth,
+        barHeight = options?.barHeight ?? defaultOptions.barHeight,
         barTopRadius = options?.barTopRadius ?? defaultOptions.barTopRadius,
         barBottomRadius = options?.barBottomRadius ?? defaultOptions.barBottomRadius,
         xAxisTextHeight = options?.xAxisTextHeight ?? defaultOptions.xAxisTextHeight,
@@ -84,8 +86,7 @@ const getChart = (node, data = [], options = {}) => {
             fontSize: options?.dataLabels?.fontSize ?? defaultOptions.dataLabels.fontSize,
             height: options?.dataLabels?.fontSize ?? defaultOptions.dataLabels.height
         },
-        dataLabelsWrapper =
-        {
+        dataLabelsWrapper = {
             enabled: options?.dataLabelsWrapper?.enabled ?? defaultOptions.dataLabelsWrapper.enabled,
             fill: options?.dataLabelsWrapper?.fill ?? defaultOptions.dataLabelsWrapper.fill,
             fontSize: options?.dataLabelsWrapper?.fontSize ?? defaultOptions.dataLabelsWrapper.fontSize,
@@ -100,21 +101,21 @@ const getChart = (node, data = [], options = {}) => {
             }
         };
 
-    var xScale = d3.scaleBand()
-        .range([0, ((data && data.length > 0) ? (width - yAxisTextWidth) : 0)])
-        .padding(0.5)
-        .domain(data.map(function (d) {
-            return d.key;
-        }));
-
-    var yScale = d3.scaleLinear()
-        .range([(data && data.length > 0) ? (height - xAxisTextHeight - (dataLabels.enabled ? dataLabels.height : 0)) : 0, 0])
+    var xScale = d3.scaleLinear()
+        .range([0, ((data && data.length > 0) ? (width - yAxisTextWidth - (dataLabels.enabled ? dataLabels.height * 1.5 : 0)) : 0)])
         .domain([0, d3.max(data, function (d) {
             return d.value;
         })]);
 
+    var yScale = d3.scaleBand()
+        .range([0, (data && data.length > 0) ? (height - xAxisTextHeight) : 0])
+        .padding(0.1)
+        .domain(data.map(function (d) {
+            return d.key;
+        }));
+
     const svg = d3.select(node)
-        .attr("class", "verticalBarSvg")
+        .attr("class", "horizontalBarSvg")
         .attr("viewBox", "0 0 " + (width + margin.left + margin.right) + " " + (height + margin.top + margin.bottom) + "");
 
     var parentGroup = svg.selectAll(".parentGroup").data([data]);
@@ -160,9 +161,9 @@ const getChart = (node, data = [], options = {}) => {
             .append("g")
             .attr('class', 'yAxis')
             .merge(yAxisGroup)
-            .attr('transform', 'translate(0,' + (dataLabels.enabled ? dataLabels.height : 0) + ')')
+            .attr('transform', 'translate(-1, 0)')
             .transition().duration(1000)
-            .call(d3.axisLeft(yScale).ticks(5));
+            .call(d3.axisLeft(yScale));
 
         if (yAxisOptions.tick === false) {
             parentGroup.selectAll("g.yAxis ").style("display", "none");
@@ -175,41 +176,41 @@ const getChart = (node, data = [], options = {}) => {
         }
     }
 
-    var bars = parentGroup.selectAll(".verticalBar").data(data);
+    var bars = parentGroup.selectAll(".horizontalBar").data(data);
 
     bars.exit()
         .transition().duration(1000)
-        .attr("y", (height - xAxisTextHeight))
-        .attr("height", 0)
+        .attr("width", 0)
+        .style("opacity", 0)
         .remove();
 
     bars.enter().append("rect")
-        .attr("height", 0)
-        .attr("x", function (d) {
-            return xScale(d.key) + ((barWidth && barWidth > 0) ? ((xScale.bandwidth() + barWidth) / 2) - barWidth : 0);
+        .attr("width", 0)
+        .attr("x", 0)
+        .attr("y", function (d) {
+            return yScale(d.key) - ((barHeight && barHeight > 0) ? ((barHeight - yScale.bandwidth()) / 2) : 0);
         })
-        .attr("y", (height - xAxisTextHeight))
-        .attr("class", "verticalBar")
-        .attr("fill", function (d) { return d.fill; }) //function (d) { return d.fill; })
+        .attr("class", "horizontalBar")
+        .attr("fill", function (d) { return d.fill; })
         .merge(bars)
-        .attr('transform', 'translate(' + 0 + ',0)')
         .style("cursor", (options?.callback) ? "pointer" : "default")
         .on("click", function (d) { return options?.callback(d); })
-        .on('mousemove', function (event, d) { Tooltip(event, d, { className: "verticalTooltip" }); })
+        .on('mousemove', function (event, d) { Tooltip(event, d, { className: "horizontalTooltip" }); })
         .on('mouseout', Tooltip.hide)
-        .attr("width", function (d) { return (barWidth && barWidth > 0) ? barWidth : (xScale.bandwidth()) })
+        .attr("height", function (d) { return (barHeight && barHeight > 0) ? barHeight : (yScale.bandwidth()) })
         .transition().duration(1000)
         .attr("fill", function (d) { return d.fill; })
-        .attr("x", function (d) {
-            return xScale(d.key) + ((barWidth && barWidth > 0) ? ((xScale.bandwidth() + barWidth) / 2) - barWidth : 0);
-        })
+        // .attr("x", function (d) {
+        //     return yScale(d.key) + ((barHeight && barHeight > 0) ? ((yScale.bandwidth() + barHeight) / 2) - barHeight : 0);
+        // })
         .attr("y", function (d) {
-            return yScale(d.value) + (dataLabels.enabled ? dataLabels.height : 0);
+            return yScale(d.key) - ((barHeight && barHeight > 0) ? ((barHeight - yScale.bandwidth()) / 2) : 0);
         })
         .attr("rx", barTopRadius)
         .attr("ry", barBottomRadius)
-        .attr("height", function (d) {
-            return (height - xAxisTextHeight - yScale(d.value) - (dataLabels.enabled ? dataLabels.height : 0));
+        .attr("height", function (d) { return (barHeight && barHeight > 0) ? barHeight : (yScale.bandwidth()) })
+        .attr("width", function (d) {
+            return xScale(d.value);
         });
 
     let textWrapperGroup = parentGroup.selectAll(".textWrapperGroup").data(dataLabels.enabled ? data : []);
@@ -223,24 +224,24 @@ const getChart = (node, data = [], options = {}) => {
         .append("g")
         .attr("class", "textWrapperGroup")
         .attr("transform", function (d) {
-            let translateX = xScale(d.key) + (barWidth / 2) + ((barWidth && barWidth > 0) ? ((xScale.bandwidth() + barWidth) / 2) - barWidth : 0);
-            let translateY = (height - xAxisTextHeight);
+            let translateY = yScale(d.key) + (barHeight / 2) + ((barHeight && barHeight > 0) ? ((yScale.bandwidth() + barHeight) / 2) - barHeight : 0);
+            let translateX = 0;
             return "translate(" + translateX + "," + translateY + ")";
         })
-        .on('mousemove', function (event, d) { Tooltip(event, d, { className: "verticalTooltip" }); })
-        .on('mouseout', Tooltip.hide)
+        .on('mousemove', function (event, d) { Tooltip(event, d, { className: "horizontalTooltip" }); })//onMouseMove)
+        .on('mouseout', Tooltip.hide)//onMouseOut)
         .merge(textWrapperGroup)
         .transition()
         .duration(1000)
         .attr("transform", function (d) {
-            let translateX = xScale(d.key) + (barWidth / 2) + ((barWidth && barWidth > 0) ? ((xScale.bandwidth() + barWidth) / 2) - barWidth : 0);
-            let translateY = yScale(d.value) - 10 + (dataLabels.enabled ? dataLabels.height : 0);
+            let translateY = yScale(d.key) + 5 + (barHeight / 2) + ((barHeight && barHeight > 0) ? ((yScale.bandwidth() + barHeight) / 2) - barHeight : 0);
+            let translateX = xScale(d.value) + (dataLabels.enabled ? dataLabels.height : 0);
             return "translate(" + translateX + "," + translateY + ")";
         })
         .each(function (eachData) {
             let group = d3.select(this);
 
-            let text = group.selectAll(".verticalBarText").data([eachData]);
+            let text = group.selectAll(".horizontalBarText").data([eachData]);
             text.exit()
                 .transition().duration(1000)
                 // .attr("y", height)
@@ -250,7 +251,7 @@ const getChart = (node, data = [], options = {}) => {
             if (dataLabels.enabled) {
                 text.enter()
                     .append("text")
-                    .attr("class", "verticalBarText")
+                    .attr("class", "horizontalBarText")
                     .style("opacity", 0)
                     .text(function (d) { return (d?.displayValue?.value ?? d?.displayValue ?? "") })
                     .merge(text)
@@ -266,9 +267,9 @@ const getChart = (node, data = [], options = {}) => {
                     .text(function (d) { return (d?.displayValue?.value ?? d?.displayValue ?? "") });
             }
 
-            text = group.selectAll(".verticalBarText");
+            text = group.selectAll(".horizontalBarText");
 
-            let textWrapper = group.selectAll(".verticalBarTextWrapper").data([text]);
+            let textWrapper = group.selectAll(".horizontalBarTextWrapper").data([text]);
             textWrapper.exit()
                 .transition().duration(1000)
                 .style("opacity", 0)
@@ -283,8 +284,8 @@ const getChart = (node, data = [], options = {}) => {
             if (dataLabelsWrapper.enabled) {
                 var triangle = d3.symbol().type(d3.symbolTriangle).size([dataLabelsWrapper.arrowSize]);
                 textWrapper.enter()
-                    .insert("rect", ".verticalBarText")
-                    .attr("class", "verticalBarTextWrapper")
+                    .insert("rect", ".horizontalBarText")
+                    .attr("class", "horizontalBarTextWrapper")
                     .style("opacity", 0)
                     .style("text-anchor", "middle")
                     .attr("rx", dataLabelsWrapper.radius)
@@ -299,12 +300,12 @@ const getChart = (node, data = [], options = {}) => {
                     .attr("x", function (d) {
                         return -(d.node().getBBox().width / 2) - dataLabelsWrapper.padding.left;
                     })
-                    .transition()
-                    .duration(1000)
-                    .style("opacity", 1)
                     .attr("y", function (d) {
                         return - d.node().getBBox().height - dataLabelsWrapper.padding.top + 3;
-                    });
+                    })
+                    .transition()
+                    .duration(1000)
+                    .style("opacity", 1);
 
                 wrapperArrow.enter()
                     .append("path")
@@ -312,22 +313,24 @@ const getChart = (node, data = [], options = {}) => {
                     .attr("d", triangle)
                     .attr("fill", dataLabelsWrapper.fill)
                     .attr("transform", function (d) {
-                        return "translate(0, " + (dataLabelsWrapper.arrowSize / 4 - 0.5) + ") rotate(180)";
+                        return "translate(" + (-dataLabels.height / 2) + ", " + (-dataLabelsWrapper.arrowSize / 4 - 0.5) + ") rotate(-90)";
                     });
             }
         });
 }
 
-const VerticalBarChart = ({ data = Data, options }) => {
+const HorizontalBarChart = ({ data = Data, options }) => {
     const svgNode = React.useRef();
     useEffect(() => {
         getChart(svgNode.current, data, options);
     }, [data, options]);
     return (
-        <div className="chartWrapper verticalBarChartWrapper">
+        <div className="chartWrapper horizontalBarChartWrapper">
             <svg ref={svgNode} />
         </div>
     );
 }
 
-export default VerticalBarChart;
+
+export default HorizontalBarChart;
+

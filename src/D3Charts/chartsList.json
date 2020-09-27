@@ -4,21 +4,21 @@
         "title": "Pie Chart",
         "description": "",
         "path": "piechart",
-        "isComplete": false
+        "isComplete": true
     },
     {
         "key": "treeMap",
         "title": "Tree Map",
         "description": "",
         "path": "treemap",
-        "isComplete": false
+        "isComplete": true
     },
     {
         "key": "lineChart",
         "title": "Line Chart",
         "description": "",
         "path": "linechart",
-        "isComplete": false
+        "isComplete": true
     },
     {
         "key": "radarChart",
@@ -32,7 +32,7 @@
         "title": "Donut Chart",
         "description": "",
         "path": "donutchart",
-        "isComplete": false
+        "isComplete": true
     },
     {
         "key": "gaugeChart",
@@ -42,11 +42,11 @@
         "isComplete": true
     },
     {
-        "key": "bubbleChart",
-        "title": " Bubble Chart",
+        "key": "zoomableBubbleChart",
+        "title": " Zoomable Bubble Chart",
         "description": "",
-        "path": " bubblechart",
-        "isComplete": false
+        "path": "zoomablebubblechart",
+        "isComplete": true
     },
     {
         "key": "verticalBarChart",
@@ -60,6 +60,6 @@
         "title": "Horizontal Bar Chart",
         "description": "",
         "path": "Horizontalbarchart",
-        "isComplete": false
+        "isComplete": true
     }
 ]

@@ -7,22 +7,40 @@
         {
             "key": "red",
             "value": 1,
-            "displayKey": "Red",
-            "displayValue": "33%",
+            "displayKey": {
+                "label": "Type",
+                "value": "Red"
+            },
+            "displayValue": {
+                "label": "Value",
+                "value": "33"
+            },
             "fill": "#f35e5e"
         },
         {
             "key": "amber",
             "value": 1,
-            "displayKey": "Amber",
-            "displayValue": "33%",
+            "displayKey": {
+                "label": "Type",
+                "value": "Amber"
+            },
+            "displayValue": {
+                "label": "Value",
+                "value": "33"
+            },
             "fill": "#ffbf00"
         },
         {
             "key": "green",
             "value": 1,
-            "displayKey": "Green",
-            "displayValue": "33%",
+            "displayKey": {
+                "label": "Type",
+                "value": "Green"
+            },
+            "displayValue": {
+                "label": "Value",
+                "value": "33"
+            },
             "fill": "#61bb61"
         }
     ]

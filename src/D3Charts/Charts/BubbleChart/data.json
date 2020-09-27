@@ -1,0 +1,67 @@
+[
+    {
+        "key": "A",
+        "value": 1,
+        "displayKey": {
+            "label": "Type",
+            "value": "A"
+        },
+        "displayValue": {
+            "label": "Value",
+            "value": "1"
+        },
+        "fill": "#fadfad"
+    },
+    {
+        "key": "B",
+        "value": 2,
+        "displayKey": {
+            "label": "Type",
+            "value": "B"
+        },
+        "displayValue": {
+            "label": "Value",
+            "value": "2"
+        },
+        "fill": "#f35e5e"
+    },
+    {
+        "key": "C",
+        "value": 3,
+        "displayKey": {
+            "label": "Type",
+            "value": "C"
+        },
+        "displayValue": {
+            "label": "Value",
+            "value": "3"
+        },
+        "fill": "#ffbf00"
+    },
+    {
+        "key": "D",
+        "value": 4,
+        "displayKey": {
+            "label": "Type",
+            "value": "D"
+        },
+        "displayValue": {
+            "label": "Value",
+            "value": "4"
+        },
+        "fill": "#61bb61"
+    },
+    {
+        "key": "E",
+        "value": 5,
+        "displayKey": {
+            "label": "Type",
+            "value": "E"
+        },
+        "displayValue": {
+            "label": "Value",
+            "value": "5"
+        },
+        "fill": "#2d59a3"
+    }
+]

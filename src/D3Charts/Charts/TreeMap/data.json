@@ -1,0 +1,160 @@
+{
+    "key": "Countries",
+    "value": null,
+    "displayKey": "Countries",
+    "displayValue": {
+        "label": "Value",
+        "value": null
+    },
+    "children": [
+        {
+            "key": "India",
+            "value": null,
+            "displayKey": {
+                "label": "Country",
+                "value": "India"
+            },
+            "displayValue": {
+                "label": "Value",
+                "value": null
+            },
+            "children": [
+                {
+                    "key": "Jharkhand",
+                    "value": 40,
+                    "displayKey": {
+                        "label": "State",
+                        "value": "Jharkhand"
+                    },
+                    "displayValue": {
+                        "label": "Value",
+                        "value": "40"
+                    },
+                    "children": [],
+                    "fill": "#b3e2cd"
+                },
+                {
+                    "key": "Chhattisgarh",
+                    "value": 30,
+                    "displayKey": {
+                        "label": "State",
+                        "value": "Chhattisgarh"
+                    },
+                    "displayValue": {
+                        "label": "Value",
+                        "value": "30"
+                    },
+                    "children": [],
+                    "fill": "#fdcdac"
+                },
+                {
+                    "key": "Karnataka",
+                    "value": 20,
+                    "displayKey": {
+                        "label": "State",
+                        "value": "Karnataka"
+                    },
+                    "displayValue": {
+                        "label": "Value",
+                        "value": "20"
+                    },
+                    "children": [],
+                    "fill": "#cbd5e8"
+                },
+                {
+                    "key": "Tamil Nadu",
+                    "value": 10,
+                    "displayKey": {
+                        "label": "State",
+                        "value": "Tamil Nadu"
+                    },
+                    "displayValue": {
+                        "label": "Value",
+                        "value": "10"
+                    },
+                    "children": [],
+                    "fill": "#f4cae4"
+                }
+            ],
+            "fill": "#e6f5c9"
+        },
+        {
+            "key": "UK",
+            "value": 20,
+            "displayKey": {
+                "label": "Country",
+                "value": "UK"
+            },
+            "displayValue": {
+                "label": "Value",
+                "value": "19"
+            },
+            "fill": "#fff2ae"
+        },
+        {
+            "key": "USA",
+            "value": 25,
+            "displayKey": {
+                "label": "Country",
+                "value": "USA"
+            },
+            "displayValue": {
+                "label": "Value",
+                "value": "18"
+            },
+            "fill": "#f1e2cc"
+        },
+        {
+            "key": "Denmark",
+            "value": 40,
+            "displayKey": {
+                "label": "Country",
+                "value": "Denmark"
+            },
+            "displayValue": {
+                "label": "Value",
+                "value": "19"
+            },
+            "fill": "#cccccc"
+        },
+        {
+            "key": "Finland",
+            "value": 50,
+            "displayKey": {
+                "label": "Country",
+                "value": "Finland"
+            },
+            "displayValue": {
+                "label": "Value",
+                "value": "14"
+            },
+            "fill": "#cbd5e8"
+        },
+        {
+            "key": "Greece",
+            "value": 30,
+            "displayKey": {
+                "label": "Country",
+                "value": "Greece"
+            },
+            "displayValue": {
+                "label": "Value",
+                "value": "11"
+            },
+            "fill": "#f4cae4"
+        },
+        {
+            "key": "Sweden",
+            "value": 60,
+            "displayKey": {
+                "label": "Country",
+                "value": "Sweden"
+            },
+            "displayValue": {
+                "label": "Value",
+                "value": "48"
+            },
+            "fill": "#fdcdac"
+        }
+    ]
+}

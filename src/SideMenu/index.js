@@ -14,7 +14,7 @@ const SideMenu = ({ menu = [], activeKey = "", options = {}, showMenu = false, c
                                 as="div"
                                 // href={`#${options?.route}${item.path}`}
                                 eventKey={item.key}
-                                className={`menuLinkContainer ${(options?.menuLinkClass ?? "")}`}
+                                className={`menuLinkContainer p0 ${(options?.menuLinkClass ?? "")}`}
                             >
                                 <Link to={{ pathname: `${options?.route}${item.path}`, state: item }} className="menuLink" onClick={() => closeMenu()}>
                                     {item.title}

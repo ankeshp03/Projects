@@ -14,7 +14,7 @@ const getRandomText = (length) => {
 }
 
 const generateData = (data, options) => {
-    let dataCount = Math.random() * 10;
+    let dataCount = Math.random() * (options.dataCount ?? 10);
     let result = [];
     let randomFill = "#" + Math.random().toString(16).slice(2, 8).toUpperCase();
     let hasKeyLabel = data?.displayKey?.label ? true : false;
@@ -49,10 +49,10 @@ const generateData = (data, options) => {
     return result;
 };
 
-const ChartViewer = ({ chart: Chart, data: defaultData, options, title, generator = null }) => {
+const ChartViewer = ({ chart: Chart, data: defaultData, options, title, generatorOptions = {}, generator = null }) => {
     const [data, setData] = useState(defaultData);
     const getData = () => {
-        setData(generator?.(generateData) ?? generateData(data[0]));
+        setData(generator?.(generateData) ?? generateData(data[0], generatorOptions));
     }
     return (
         <Row className="chartViewerRow">
