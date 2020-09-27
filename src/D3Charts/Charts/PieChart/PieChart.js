@@ -25,8 +25,8 @@ const getChart = (node, data = [], options = {}) => {
             right: options?.margin?.right ?? defaultOptions.margin.right,
             bottom: options?.margin?.bottom ?? defaultOptions.margin.bottom,
             left: options?.margin?.left ?? defaultOptions.margin.left
-        },
-        cornerRadius = options?.cornerRadius ?? defaultOptions.cornerRadius;
+        };
+        // cornerRadius = options?.cornerRadius ?? defaultOptions.cornerRadius;
 
     var radius = Math.min(width, height) / 2;
 

@@ -26,8 +26,8 @@ const getChart = (node, data = [], options = {}) => {
             left: options?.margin?.left ?? defaultOptions.margin.left
         },
         radius = Math.min(width, height) / 2,
-        thickness = options?.thickness ?? radius * 0.25,
-        cornerRadius = options?.cornerRadius ?? defaultOptions.cornerRadius;
+        thickness = options?.thickness ?? radius * 0.25;
+        // cornerRadius = options?.cornerRadius ?? defaultOptions.cornerRadius;
 
     var arc = d3.arc()
         .outerRadius(radius)
@@ -163,12 +163,12 @@ const getChart = (node, data = [], options = {}) => {
     //     .duration(500)
     //     .attrTween("d", arcTween);
 
-    function arcTween(d) {
-        var i = d3.interpolate(this._current, d);
-        return function (t) {
-            return arc(i(t));
-        };
-    }
+    // function arcTween(d) {
+    //     var i = d3.interpolate(this._current, d);
+    //     return function (t) {
+    //         return arc(i(t));
+    //     };
+    // }
 }
 
 const DonutChart = ({ data = Data, options }) => {
