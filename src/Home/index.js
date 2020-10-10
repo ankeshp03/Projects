@@ -5,6 +5,15 @@ import Header from './../Header';
 import ProjectList from './../ProjectList.json';
 import './home-styles.scss';
 
+const getCard = (project) => {
+    return (
+        <Card>
+            <h5 className="title">{project.title}</h5>
+            <p className="description mB0">{project.description}</p>
+        </Card>
+    );
+}
+
 const Home = () => {
     return (
         <Container fluid className="projectsContainer wrapper">
@@ -13,12 +22,19 @@ const Home = () => {
                 {
                     ProjectList.map(project => (
                         <Col key={project.key} md={4} sm={6} xs={12} className="mB20">
-                            <Link to={project.path} className="project">
-                                <Card>
-                                    <h5 className="title">{project.title}</h5>
-                                    <p className="description mB0">{project.description}</p>
-                                </Card>
-                            </Link>
+                            {
+                                !project.newTab
+                                    ? (
+                                        <Link to={project.path} className="project" target={(project.newTab ? "_blank" : "_self")}>
+                                            {getCard(project)}
+                                        </Link>
+                                    )
+                                    : (
+                                        <a href={project.path} className="project" target="_blank" rel="noopener noreferrer">
+                                            {getCard(project)}
+                                        </a>
+                                    )
+                            }
                         </Col>
                     ))
                 }

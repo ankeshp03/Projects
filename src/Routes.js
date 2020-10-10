@@ -6,6 +6,7 @@ import Home from './Home';
 const D3Charts = lazy(() => import('./D3Charts'));
 const CssArts = lazy(() => import('./CssArts'));
 const NotesApp = lazy(() => import('./NoteTakingApp'));
+// const TirentDesigns = lazy(() => import('./TirentDesigns'));
 
 const Routes = () => {
     return (
@@ -17,6 +18,7 @@ const Routes = () => {
                 <Route path="/d3charts" render={(props) => <D3Charts {...props} />} />
                 <Route path="/cssarts" render={(props) => <CssArts {...props} />} />
                 <Route path="/notesapp" render={(props) => <NotesApp {...props} />} />
+                {/* <Route exact path="/tirentdesigns" render={(props) => <TirentDesigns {...props} />} /> */}
             </Switch>
         </Suspense>
     );

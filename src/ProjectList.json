@@ -3,18 +3,28 @@
         "key": "d3Charts",
         "title": "D3 Charts",
         "description": "Charts and graphs visualization using D3js.",
-        "path": "/d3charts"
+        "path": "/d3charts",
+        "newTab": false
     },
     {
         "key": "cssArts",
         "title": "CSS Arts",
         "description": "Arts in pure CSS",
-        "path": "/cssarts"
+        "path": "/cssarts",
+        "newTab": false
     },
     {
         "key": "noteTakingApp",
         "title": "Note Taking App",
         "description": "Note taking application in React",
-        "path": "/notesapp"
+        "path": "/notesapp",
+        "newTab": false
+    },
+    {
+        "key": "tirentDesigns",
+        "title": "Tirent Designs",
+        "description": "A dumy portfolio website for a company in AngularJS",
+        "path": "https://tirentdesigns.netlify.app/",
+        "newTab": true
     }
 ]
