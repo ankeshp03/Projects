@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-// import { Link } from 'react-router-dom';
 import Routes from './ChartRoutes';
 import SideMenu from './../SideMenu';
 import Header from './../Header';

@@ -15,7 +15,7 @@ const DefaultPage = () => {
                     The CSS arts that are striked out, are not yet completed.
             </p>
             <div className="imageContainer pT20">
-                <Image src={CssAnimationImage} fluid alt={"Charts"} className="image" />
+                <Image src={CssAnimationImage} fluid alt={"CSS Animation gif"} className="image" />
             </div>
         </div>
     );
