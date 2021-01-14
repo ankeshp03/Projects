@@ -13,10 +13,12 @@ const getRandomText = (length) => {
     return result;
 }
 
+const getRandomColor = () => "#" + Math.random().toString(16).slice(2, 8).toUpperCase();
+
 const generateData = (data, options) => {
-    let dataCount = Math.random() * (options.dataCount ?? 10);
+    let dataCount = (options?.randomizeDataCount === undefined || options?.randomizeDataCount === true) ? Math.random() * (options.dataCount ?? 10) : options.dataCount;
     let result = [];
-    let randomFill = "#" + Math.random().toString(16).slice(2, 8).toUpperCase();
+    let randomFill = getRandomColor();
     let hasKeyLabel = data?.displayKey?.label ? true : false;
     let hasValueLabel = data?.displayValue?.label ? true : false;
     for (let i = 0; i < dataCount; i++) {
@@ -36,15 +38,17 @@ const generateData = (data, options) => {
             }
             : randomValue;
 
-        result.push(
-            {
-                key: randomKey,
-                value: randomValue,
-                displayKey,
-                displayValue,
-                fill: options?.diffFill ? "#" + Math.random().toString(16).slice(2, 8).toUpperCase() : randomFill
-            }
-        );
+        const resultObj = {
+            key: randomKey,
+            value: randomValue,
+            displayKey,
+            displayValue
+        };
+
+        if (!options?.noFill) {
+            resultObj["fill"] = options?.diffFill ? getRandomColor() : randomFill;
+        }
+        result.push(resultObj);
     }
     return result;
 };
@@ -52,7 +56,7 @@ const generateData = (data, options) => {
 const ChartViewer = ({ chart: Chart, data: defaultData, options, title, generatorOptions = {}, generator = null }) => {
     const [data, setData] = useState(defaultData);
     const getData = () => {
-        setData(generator?.(generateData) ?? generateData(data[0], generatorOptions));
+        setData(generator?.(generateData, getRandomText, getRandomColor) ?? generateData(data[0], generatorOptions));
     }
     return (
         <Row className="chartViewerRow">

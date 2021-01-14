@@ -12,6 +12,7 @@ const GaugeChart = lazy(() => import('./Charts/GaugeChart'));
 const BubbleChart = lazy(() => import('./Charts/BubbleChart'));
 const VerticalBarChart = lazy(() => import('./Charts/VerticalBarChart'));
 const HorizontalBarChart = lazy(() => import('./Charts/HorizontalBarChart'));
+const RadarChart = lazy(() => import('./Charts/RadarChart'));
 
 const Routes = ({ url }) => {
     return (
@@ -25,6 +26,7 @@ const Routes = ({ url }) => {
                 <Route path={`${url}/zoomablebubblechart`} render={() => <BubbleChart />} />
                 <Route path={`${url}/verticalbarchart`} render={() => <VerticalBarChart />} />
                 <Route path={`${url}/horizontalbarchart`} render={() => <HorizontalBarChart />} />
+                <Route path={`${url}/radarchart`} render={() => <RadarChart />} />
                 <Route exact path={`${url}`} render={() => <DefaultPage />} />
                 <Route render={() => <NoChartPage />} />
             </Switch>

@@ -25,7 +25,7 @@
         "title": "Radar Chart",
         "description": "",
         "path": "radarchart",
-        "isComplete": false
+        "isComplete": true
     },
     {
         "key": "donutChart",

@@ -1,67 +1,158 @@
 [
-    {
+  {
+    "name": "Name 1",
+    "axes": [
+      {
         "key": "A",
+        "value": 5,
+        "displayKey": {
+          "label": "Type",
+          "value": "A"
+        },
+        "displayValue": {
+          "label": "Value",
+          "value": "5"
+        }
+      },
+      {
+        "key": "B",
         "value": 1,
         "displayKey": {
-            "label": "Type",
-            "value": "A"
+          "label": "Type",
+          "value": "B"
         },
         "displayValue": {
-            "label": "Value",
-            "value": "1"
-        },
-        "fill": "#fadfad"
-    },
-    {
-        "key": "B",
-        "value": 2,
+          "label": "Value",
+          "value": "2"
+        }
+      },
+      {
+        "key": "C",
+        "value": 1,
         "displayKey": {
-            "label": "Type",
-            "value": "B"
+          "label": "Type",
+          "value": "C"
         },
         "displayValue": {
-            "label": "Value",
-            "value": "2"
+          "label": "Value",
+          "value": "3"
+        }
+      },
+      {
+        "key": "D",
+        "value": 1,
+        "displayKey": {
+          "label": "Type",
+          "value": "D"
         },
-        "fill": "#f35e5e"
-    },
-    {
+        "displayValue": {
+          "label": "Value",
+          "value": "4"
+        }
+      },
+      {
+        "key": "E",
+        "value": 1,
+        "displayKey": {
+          "label": "Type",
+          "value": "E"
+        },
+        "displayValue": {
+          "label": "Value",
+          "value": "5"
+        }
+      },
+      {
+        "key": "F",
+        "value": 1,
+        "displayKey": {
+          "label": "Type",
+          "value": "F"
+        },
+        "displayValue": {
+          "label": "Value",
+          "value": "6"
+        }
+      }
+    ],
+    "fill": "#0033a0"
+  },
+  {
+    "name": "Name 2",
+    "axes": [
+      {
+        "key": "A",
+        "value": 4,
+        "displayKey": {
+          "label": "Type",
+          "value": "A"
+        },
+        "displayValue": {
+          "label": "Value",
+          "value": "4"
+        }
+      },
+      {
+        "key": "B",
+        "value": 4,
+        "displayKey": {
+          "label": "Type",
+          "value": "B"
+        },
+        "displayValue": {
+          "label": "Value",
+          "value": "4"
+        }
+      },
+      {
         "key": "C",
         "value": 3,
         "displayKey": {
-            "label": "Type",
-            "value": "C"
+          "label": "Type",
+          "value": "C"
         },
         "displayValue": {
-            "label": "Value",
-            "value": "3"
-        },
-        "fill": "#ffbf00"
-    },
-    {
+          "label": "Value",
+          "value": "3"
+        }
+      },
+      {
         "key": "D",
-        "value": 4,
+        "value": 3,
         "displayKey": {
-            "label": "Type",
-            "value": "D"
+          "label": "Type",
+          "value": "D"
         },
         "displayValue": {
-            "label": "Value",
-            "value": "4"
-        },
-        "fill": "#61bb61"
-    },
-    {
+          "label": "Value",
+          "value": "3"
+        }
+      },
+      {
         "key": "E",
-        "value": 5,
+        "value": 2,
         "displayKey": {
-            "label": "Type",
-            "value": "E"
+          "label": "Type",
+          "value": "E"
         },
         "displayValue": {
-            "label": "Value",
-            "value": "5"
+          "label": "Value",
+          "value": "2"
+        }
+      },
+      {
+        "key": "F",
+        "value": 2,
+        "displayKey": {
+          "label": "Type",
+          "value": "F"
         },
-        "fill": "#2d59a3"
-    }
+        "displayValue": {
+          "label": "Value",
+          "value": "2"
+        }
+      }
+    ],
+    "fill": "#6626ae"
+  }
 ]
