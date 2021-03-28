@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Row, Col, Tabs, Tab } from 'react-bootstrap';
 import parse from 'html-react-parser';
 import Highlight, { defaultProps } from "prism-react-renderer";
@@ -42,19 +42,24 @@ const getHighlightedCode = (code, language) => {
     );
 };
 
-const ArtViewer = ({ data: { key = "", title = "" } = {} }) => {
+const ArtViewer = ({ data: { key = "", title = "" } }) => {
+    let showTitle = useRef("");
+    const [showLoader, setShowLoader] = useState(true);
     const [elementDetails, setDetails] = useState({ html: "", css: "" });
     useEffect(() => {
+        setShowLoader(true);
         const getDetails = async () => {
             let details = await getComponent(key);
+            showTitle.current = title;
+            setShowLoader(false);
             setDetails(details.default);
-        }
+        };
         getDetails();
-    }, [key]);
-    return (
+    }, [key, title]);
+    return (!showLoader ? (
         <Row className="artViewerRow">
             <Col lg={7}>
-                <h5>{title}</h5>
+                <h5>{showTitle.current}</h5>
                 {
                     elementDetails.html
                         ? (
@@ -97,7 +102,9 @@ const ArtViewer = ({ data: { key = "", title = "" } = {} }) => {
                     </Tab>
                 </Tabs>
             </Col>
-        </Row >
+        </Row>) : (
+        <Loader />
+    )
     );
 };
 
