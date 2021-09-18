@@ -105,13 +105,13 @@
             outline: none;
             line-height: 20px;
             background: #ffffff50;
-            height: calc(100% - 75px);
+            height: calc(100% - 85px);
             transition: visibility, opacity 0.3s ease-in-out;
         }
         .noteContainer {
             margin: 10px;
             padding: 10px;
-            min-height: 200px;
+            min-height: 250px;
             position: relative;
             border-radius: 5px;
             transition: flex-basis 0.3s ease-in-out;
