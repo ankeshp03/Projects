@@ -21,7 +21,7 @@ const Home = () => {
             <Row className="project-row">
                 {
                     ProjectList.map(project => (
-                        <Col key={project.key} md={4} sm={6} xs={12} className="mB20">
+                        <Col key={project.key} md={4} sm={6} xs={12} className="mB30">
                             {
                                 !project.newTab
                                     ? (

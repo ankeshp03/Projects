@@ -1,11 +1,11 @@
 .artViewerRow {
     margin-top: 15px;
-    min-height: calc(100vh - 60px);
+    min-height: calc(100vh - 3.5rem - 15px);
     .pikachu {
         transform: scale(0.5);
     }
     .loaderContainer {
-        min-height: calc(100vh - 66px);
+        min-height: calc(100% - 32px);
     }
 
     .tab-pane,
@@ -17,13 +17,13 @@
         .codeContainer {
             height: 100%;
             .loaderContainer {
-                min-height: calc(100vh - 85px);
+                min-height: 100%;
             }
         }
     }
     @media (min-width: 992px) {
         .tab-content {
-            height: calc(100% - 35px);
+            height: calc(100% - 42px);
         }
         .codeViewerContainer {
             margin-top: -15px;
