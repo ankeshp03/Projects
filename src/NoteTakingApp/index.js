@@ -65,7 +65,7 @@ const NoteApp = () => {
 
     return (
         <Container fluid className="notesWrapper wrapper">
-            <Header header="Projects" subHeader="Note Taking App" url="#" subUrl="#notesapp" />
+            <Header header="Projects" subHeader="Note Taking App" url="/" subUrl="/notesapp" />
             <ul id="notesContainer" className={(showAddForm ? "showForm" : "")}>
                 <li id="addNoteContainer" className="noteContainer">
                     <span className="addIcon" title="Click to add a note" onClick={() => setShowFormStatus(true)}>+</span>

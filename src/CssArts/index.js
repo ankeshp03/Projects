@@ -14,7 +14,7 @@ const CssArts = ({ match, location: { state } }) => {
     let data = state ?? ArtsList.filter(art => art.path === subUrl)[0];
     return (
         <Container fluid className="cssArtsContainer wrapper">
-            <Header header="Projects" subHeader="CSS Charts" url="#" subUrl="#cssarts" isMenuPresent={true} menuBtnClick={(shouldOpen) => setMenuOpenStatus(shouldOpen)} isMenuClosed={!showMenu} />
+            <Header header="Projects" subHeader="CSS Charts" url="/" subUrl="/cssarts" isMenuPresent={true} menuBtnClick={(shouldOpen) => setMenuOpenStatus(shouldOpen)} isMenuClosed={!showMenu} />
             <SideMenu title={"CSS Arts List"} menu={ArtsList} activeKey={data?.key} options={{ route: `${match.url}/` }} showMenu={showMenu} closeMenu={() => setMenuOpenStatus(false)} />
             <Row>
                 <Col sm={12} lg={{ span: 10, offset: 2 }} className="animatCol">
